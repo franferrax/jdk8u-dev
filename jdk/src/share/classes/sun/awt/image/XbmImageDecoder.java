@@ -110,10 +110,10 @@ public class XbmImageDecoder extends ImageDecoder {
                         error("Error while parsing define statement");
                     }
                     try {
-                        if (!token[2].isBlank() && state == 0) {
+                        if (!token[2].trim().isEmpty() && state == 0) {
                             W = Integer.parseInt(token[2]);
                             state = 1; // after width is set
-                        } else if (!token[2].isBlank() && state == 1) {
+                        } else if (!token[2].trim().isEmpty() && state == 1) {
                             H = Integer.parseInt(token[2]);
                             state = 2; // after height is set
                         }
